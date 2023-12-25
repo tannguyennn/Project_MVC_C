@@ -1,0 +1,58 @@
+﻿@{
+    try
+    {
+        string hoTen = Session["HoTen"].ToString();
+        if (hoTen != null)
+        {
+            ViewBag.NguoiDung = "Thông tin người dùng: " + hoTen;
+        }
+        else
+        {
+            ViewBag.NguoiDung = "Thông tin người dùng: Chưa đăng nhập ";
+        }
+    }
+    catch
+    {
+
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/styleAdmin.css" rel="stylesheet" />
+</head>
+<body style="margin-top:0px;">
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="../Home/Index">LUXURY HOTEL</a></h1>
+                <ul>
+                    <li><a href="../Home/Index">Trang chủ</a></li>
+                    <li><a href="../Phongs63132204/Index">Đặt phòng</a></li>
+                    <li><a href="../DichVus63132204/Index">Dịch vụ</a></li>
+                    <li><a href="../KhachHangs63132204/Index">Tài khoản</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div>
+        <div >
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer">
+        Copyright &copy; @DateTime.Now.Year
+    </div>
+    
+</body>
+</html>

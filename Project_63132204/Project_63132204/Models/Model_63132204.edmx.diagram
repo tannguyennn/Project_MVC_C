@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e7969f627df7461f94facc161b907807" Name="Diagram1">
+        <EntityTypeShape EntityType="Project_63132204Model.DichVu" Width="1.5" PointX="3.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_63132204Model.HoaDonDatPhong" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_63132204Model.HoaDonDichVu" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_63132204Model.KhachHang" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_63132204Model.LoaiDichVu" Width="1.5" PointX="1.5" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_63132204Model.LoaiPhong" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_63132204Model.NhanVien" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_63132204Model.Phong" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <AssociationConnector Association="Project_63132204Model.FK__DichVu__MaLDV__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_63132204Model.FK__HoaDonDich__MaDV__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_63132204Model.FK__HoaDonDat__MaPho__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_63132204Model.FK__HoaDonDatP__MaKH__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_63132204Model.FK__HoaDonDatP__MaNV__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_63132204Model.FK__HoaDonDic__MaPho__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_63132204Model.FK__HoaDonDich__MaKH__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_63132204Model.FK__HoaDonDich__MaNV__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_63132204Model.FK__Phong__MaLoaiPho__3D5E1FD2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
