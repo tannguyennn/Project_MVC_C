@@ -3,15 +3,16 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutKH.cshtml";
+    int i = 0;
 }
 
-<h2>Index</h2>
+<h2>DANH SÁCH DỊCH VỤ</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
+        <th>
+            STT
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.TenDV)
         </th>
@@ -24,9 +25,7 @@
         <th>
             @Html.DisplayNameFor(model => model.DonVi)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Anh)
-        </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.LoaiDichVu.TenLDV)
         </th>
@@ -35,6 +34,10 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @{ i++;}
+            @i;
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.TenDV)
         </td>
@@ -47,16 +50,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.DonVi)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Anh)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.LoaiDichVu.TenLDV)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaDV }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaDV }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaDV })
+           
+            @Html.ActionLink("Details", "Details", new { id=item.MaDV })
         </td>
     </tr>
 }

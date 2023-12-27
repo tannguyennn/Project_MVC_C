@@ -2,81 +2,89 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutKH.cshtml";
 }
+<!DOCTYPE html>
 
-<h2>Details</h2>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>THÔNG TIN CHI TIẾT</title>
+    </head>
+    <body>
+        <div>
+            <h4>KhachHang</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    Họ Khách hàng:
+                </dt>
 
-<div>
-    <h4>KhachHang</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.HoKH)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HoKH)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HoKH)
-        </dd>
+                <dt>
+                    Tên khách hàng:
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TenKH)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TenKH)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenKH)
-        </dd>
+                <dt>
+                    Số CCCD/CMND:
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CCCD)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CCCD)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CCCD)
-        </dd>
+                <dt>
+                    Giới tính:
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GioiTinh)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.GioiTinh)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.GioiTinh)
-        </dd>
+                <dt>
+                    Số điện thoại:
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SDT)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.SDT)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.SDT)
-        </dd>
+                <dt>
+                    Email:
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                <dt>
+                    Tài khoản:
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TKKH)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TKKH)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TKKH)
-        </dd>
+                <dt>
+                    Mật khẩu:
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MKKH)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.MKKH)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MKKH)
-        </dd>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Trở về", "../Home/Index")
+        </p>
+    </body>
+</html>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKH }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

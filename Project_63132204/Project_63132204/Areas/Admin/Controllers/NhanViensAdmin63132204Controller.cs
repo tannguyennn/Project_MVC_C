@@ -15,16 +15,11 @@ namespace Project_63132204.Areas.Admin.Controllers
         private Project_63132204Entities db = new Project_63132204Entities();
 
         // GET: Admin/NhanViensAdmin63132204
-        public ActionResult Thongke63132204()
-        {
-            return View();
-        }
+        
 
         [HttpGet]
-        public ActionResult Index(String maNV, String hoTen, String gioiTinh)
-        {
-            var nhanViens = db.NhanViens.SqlQuery("exec NhanVien_TimKiem '" + maNV + "', N'" + hoTen + "', N'" + gioiTinh + "' ");
-
+        public ActionResult Index()
+        { 
             return View(db.NhanViens.ToList());
         }
 

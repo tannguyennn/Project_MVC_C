@@ -248,6 +248,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\print.css" />
     <Content Include="Content\StyleAdmin.css" />
     <Content Include="Content\StyleKH.css" />
     <Content Include="favicon.ico" />
@@ -307,7 +309,7 @@
     <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Details.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\NhanViensAdmin63132204\Thongke63132204.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDatPhongsAdmin63132204\Thongke63132204.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

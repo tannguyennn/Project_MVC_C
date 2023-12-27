@@ -3,68 +3,30 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutNV.cshtml";
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "MaDatPhong", rowsPerPage: 10);
 }
+<h2>DANH SÁCH ĐƠN HÀNG</h2>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NgayDat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NgayVao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NgayRa)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThanhToan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phong.TenPhong)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.KhachHang.HoKH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NhanVien.HoNV)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayDat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayVao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayRa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThanhToan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phong.TenPhong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KhachHang.HoKH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NhanVien.HoNV)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
-
-</table>
+<div id="gridContent">
+    @ViewBag.TB
+    @grid.GetHtml(
+        tableStyle: "table table-bordered table-hover",
+        footerStyle: "grid-footer",
+        fillEmptyRows: true,
+        mode: WebGridPagerModes.Numeric,
+        alternatingRowStyle: "alternatingRowStyle",
+          columns: new[]  // colums in grid
+         {
+     grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+    grid.Column("MaDatPhong","Mã đặt phòng"), //the model fields to display
+    grid.Column("NhanVien.TenNV","Tên Nhân viên"),
+    grid.Column("KhachHang.TenKH","Tên Nhân viên"),
+    grid.Column("Phong.TenPhong","Tên Phòng"),
+    grid.Column("NgayDat","Ngày đặt",format:@<text> @item.NgayDat.ToString("dd/MM/yyyy")</text>),
+    grid.Column("NgayVao","Ngày check in",format:@<text> @item.NgayVao.ToString("dd/MM/yyyy")</text>),
+    grid.Column("NgayRa","Ngày check out",format:@<text> @item.NgayRa.ToString("dd/MM/yyyy")</text>),
+    grid.Column("ThanhToan","Trình trạng", format: (@item) => @item.ThanhToan==false?"Chưa duyệt":"Đã duyệt"),
+    grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","HoaDonDatPhongsAdmin63132204", new { id = item.MaDatPhong },"HoaDonDatPhongsAdmin63132204Controller")),
+    grid.Column(format: (item) => Html.ActionLink("Duyệt", "Duyet", "HoaDonDatPhongsAdmin63132204", new { id = item.MaDatPhong }, new { @class = "btn btn-success" })),    }
+)
+</div>

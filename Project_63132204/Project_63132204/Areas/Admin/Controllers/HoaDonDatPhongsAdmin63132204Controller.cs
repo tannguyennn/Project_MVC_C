@@ -14,6 +14,24 @@ namespace Project_63132204.Areas.Admin.Controllers
     {
         private Project_63132204Entities db = new Project_63132204Entities();
 
+        
+        public ActionResult Thongke63132204(String ngaydau, String ngaycuoi)
+        {
+            
+            var thongkes = db.HoaDonDatPhongs.SqlQuery("exec ThongKe_HoaDon '"+ngaydau+"', '"+ngaycuoi+"'");
+            return View(thongkes.ToList());
+        }
+        public ActionResult Duyet(int id)
+        {
+            var hoaDonDatphong = db.HoaDonDatPhongs.Find(id);
+            if (hoaDonDatphong != null)
+            {
+                hoaDonDatphong.ThanhToan = true; // Đặt tình trạng là "Đã duyệt"
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
         // GET: Admin/HoaDonDatPhongsAdmin63132204
         public ActionResult Index()
         {

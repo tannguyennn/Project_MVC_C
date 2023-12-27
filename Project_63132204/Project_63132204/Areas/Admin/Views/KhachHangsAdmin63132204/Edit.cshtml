@@ -1,7 +1,7 @@
 ﻿@model Project_63132204.Models.KhachHang
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutNV.cshtml";
 }
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
+    <title>Chỉnh sửa</title>
 </head>
 <body>
     @using (Html.BeginForm())
@@ -95,7 +95,7 @@
     }
     
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Trở về", "Index")
     </div>
 </body>
 </html>

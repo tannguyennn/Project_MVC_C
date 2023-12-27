@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_LayoutNV.cshtml";
 }
 
-<h2>Details</h2>
+<h2>HÓA ĐƠN ĐẶT PHÒNG</h2>
 
 <div>
     <h4>HoaDonDatPhong</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NgayDat)
+            Ngày đặt:
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayVao)
+            Ngày check in:
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayRa)
+            Ngày check out:
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ThanhToan)
+            Tình trạng:
         </dt>
 
         <dd>
@@ -44,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Phong.TenPhong)
+            Tên phòng:
         </dt>
 
         <dd>
@@ -52,24 +52,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.KhachHang.HoKH)
+            Tên khách hàng:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.KhachHang.HoKH)
+            @Html.DisplayFor(model => model.KhachHang.TenKH)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NhanVien.HoNV)
+            Tên nhân viên:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NhanVien.HoNV)
+            @Html.DisplayFor(model => model.NhanVien.TenNV)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("trở về", "Index")
 </p>
