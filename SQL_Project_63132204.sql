@@ -7,7 +7,7 @@ CREATE TABLE NhanVien (
     HoNV NVARCHAR(50) NOT NULL,
     TenNV NVARCHAR(50) NOT NULL,
     NgaySinh DATE NOT NULL,
-	GioiTinh VARCHAR(3) NOT NULL,
+	GioiTinh NVARCHAR(3) NOT NULL,
     DiaChi NVARCHAR(255) NOT NULL,
     SDT VARCHAR(10) NOT NULL,
 	Luong INT NOT NULL,
@@ -80,14 +80,14 @@ CREATE TABLE HoaDonDatPhong (
 );
 
 INSERT INTO NhanVien VALUES
-('NV001',N'Nguyễn',N'Thị Huệ','1999-01-10',N'Nữ',N'Nha Trang, Khánh Hòa','0956271621',6000000,null,null),
+('NV001',N'Nguyễn',N'Thị Huệ','1999-01-10',N'Nữ',N'Nha Trang, Khánh Hòa','0956271621',6000000,'nhanvien1','nv111'),
 ('NV002',N'Huỳnh',N'Thu Liễu','1999-01-10',N'Nữ',N'Vạn Ninh, Khánh Hòa','0987617265',6000000,null,null),
 ('NV003',N'Trần',N'Anh Quốc','1999-01-10',N'Nam',N'Nha Trang, Khánh Hòa','0998327265',6200000,null,null),
 ('NV004',N'Trần',N'Thu Trang','1999-01-10',N'Nữ',N'Cam Ranh, Khánh Hòa','0118217265',6100000,null,null),
 ('NV005',N'Nguyễn',N'Bảo Việt','1999-01-10',N'Nam',N'Nha Trang, Khánh Hòa','0987675415',6500000,null,null)
 
 INSERT INTO KhachHang VALUES
-('KH001',N'Ngô',N'Xuân Huy',     '056209187361',N'Nam','0975615463','xuanhuy123@gmail.com',null,null),
+('KH001',N'Ngô',N'Xuân Huy',     '056209187361',N'Nam','0975615463','xuanhuy123@gmail.com','khachhang1','kh111'),
 ('KH002',N'Cao',N'Anh Tiến',     '056267465351',N'Nam','0398762465','anhtien123@gmail.com',null,null),
 ('KH003',N'Huỳnh',N'Hoa Mai',    '056213265742',N'Nữ', '0308654236','hoamai123@gmail.com',null,null),
 ('KH004',N'Lương',N'Quỳnh Trâm', '056245341454',N'Nữ', '0908865623','quanhtram123@gmail.com',null,null),
@@ -176,13 +176,13 @@ INSERT INTO HoaDonDichVu VALUES
 INSERT INTO HoaDonDatPhong VALUES
 ('HDDP001','NV001','KH001','P101','2023-10-13','2023-10-13','2023-10-15',0),
 ('HDDP001','NV001','KH001','P102','2023-10-13','2023-10-13','2023-10-15',0),
-('HDDP002','NV002','KH003','P104','2023-10-13','2023-10-13','2023-10-18',0),
-('HDDP003','NV002','KH005','P201','2023-11-13','2023-11-13','2023-11-15',0),
-('HDDP003','NV002','KH005','P304','2023-11-13','2023-11-13','2023-11-15',0),
-('HDDP004','NV003','KH004','P301','2023-10-18','2023-10-18','2023-10-20',0),
-('HDDP005','NV004','KH001','P101','2023-12-10','2023-12-13','2023-12-20',0),
-('HDDP006','NV005','KH006','P301','2023-11-27','2023-11-27','2023-11-28',0),
-('HDDP006','NV005','KH006','P302','2023-11-27','2023-11-27','2023-11-28',0),
+('HDDP002','NV002','KH003','P104','2023-10-13','2023-10-13','2023-10-18',1),
+('HDDP003','NV002','KH005','P201','2023-11-13','2023-11-13','2023-11-15',1),
+('HDDP003','NV002','KH005','P304','2023-11-13','2023-11-13','2023-11-15',1),
+('HDDP004','NV003','KH004','P301','2023-10-18','2023-10-18','2023-10-20',1),
+('HDDP005','NV004','KH001','P101','2023-12-10','2023-12-13','2023-12-20',1),
+('HDDP006','NV005','KH006','P301','2023-11-27','2023-11-27','2023-11-28',1),
+('HDDP006','NV005','KH006','P302','2023-11-27','2023-11-27','2023-11-28',1),
 ('HDDP007','NV003','KH004','P306','2023-10-18','2023-10-18','2023-10-20',1),
 ('HDDP008','NV004','KH030','P401','2023-12-10','2023-12-13','2023-12-20',1),
 ('HDDP009','NV005','KH028','P501','2023-11-27','2023-11-27','2023-11-28',1),
@@ -227,9 +227,7 @@ GO
 CREATE PROCEDURE KhachHang_TimKiem
     @MaKH VARCHAR(10)=NULL,
 	@HoTenKH NVARCHAR(100)=NULL,
-	@GioiTinh NVARCHAR(3)=NULL,
-	@CCCD VARCHAR(12)=NULL,
-	@SDT VARCHAR(10) = NULL
+	@GioiTinh NVARCHAR(3)=NULL
 AS
 BEGIN
 DECLARE @SqlStr NVARCHAR(4000),
@@ -251,13 +249,40 @@ IF @GioiTinh IS NOT NULL
        SELECT @SqlStr = @SqlStr + '
              AND (GioiTinh LIKE N''%'+@GioiTinh+'%'')
              '
-IF @CCCD IS NOT NULL
-       SELECT @SqlStr = @SqlStr + '
-             AND (CCCD LIKE ''%'+@CCCD+'%'')
-             '
-IF @SDT IS NOT NULL
-       SELECT @SqlStr = @SqlStr + '
-              AND (SDT LIKE N''%'+@SDT+'%'')
-              '
 	EXEC SP_EXECUTESQL @SqlStr
 END
+
+
+GO
+CREATE PROCEDURE ThongKe_Dichvu
+    @NgayDau DATE=NULL,
+	@NgayCuoi DATE=NULL
+AS
+BEGIN
+	SELECT *
+	FROM HoaDonDichVu
+	WHERE DATEDIFF(dd,@NgayDau,NgayDat) > 1
+	UNION
+	SELECT *
+	FROM HoaDonDichVu
+	WHERE DATEDIFF(mm,NgayDat,@NgayCuoi) > 1
+END
+
+
+
+GO
+CREATE PROCEDURE ThongKe_HoaDon
+    @NgayDau DATE=NULL,
+	@NgayCuoi DATE=NULL
+AS
+BEGIN
+SELECT *
+	FROM HoaDonDatPhong
+	WHERE DATEDIFF(dd,@NgayDau,NgayDat) > 1
+	UNION
+	SELECT *
+	FROM HoaDonDatPhong
+	WHERE DATEDIFF(mm,NgayDat,@NgayCuoi) > 1
+END
+
+--exec ThongKe_HoaDon '2023-10-01', '2023-12-31'

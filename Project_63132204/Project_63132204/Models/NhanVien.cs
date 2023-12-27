@@ -40,6 +40,7 @@ namespace Project_63132204.Models
 
         [DisplayName("Ngày sinh")]
         [Required(ErrorMessage = "Chưa nhập ngày sinh")]
+        [DisplayFormat(DataFormatString = "{0,dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime NgaySinh { get; set; }
 
         [DisplayName("Giới tính")]

@@ -219,7 +219,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Project_63132204Entities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Project_63132204Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="DichVus" EntityType="Self.DichVu" />
     <EntitySet Name="HoaDonDatPhongs" EntityType="Self.HoaDonDatPhong" />
     <EntitySet Name="HoaDonDichVus" EntityType="Self.HoaDonDichVu" />

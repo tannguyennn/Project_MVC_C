@@ -1,13 +1,70 @@
 ﻿<!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <title>Nhân Viên</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Stylesheet -->
+    <link href="~/Content/StyleAdmin.css" rel="stylesheet" />
 </head>
+
 <body>
-    <div>
-        @RenderBody()
+    <div >
+        <div class="sidebar">
+            <nav class="navbar bg-light">
+                    <h3 class="text-primary">NHÂN VIÊN</h3>
+                    <div class="nav-item ">
+                        <div class="container">
+                            <table class="table1">
+                                <tr>
+                                    <th><a href="/Admin/PhongsAdmin63132204/Index">Phòng</a></th>
+                                </tr>
+                                <tr>
+                                    <th><a href="/Admin/DichVusAdmin63132204/Index">Dịch vụ</a></th>
+                                </tr>
+                                <tr>
+                                    <th><a href="/Admin/KhachHangsAdmin63132204/Index">Khách hàng</a></th>
+                                </tr>
+                                <tr>
+                                    <th><a href="/Admin/NhanViensAdmin63132204/Index">Nhân viên</a></th>
+                                </tr>
+                                <tr>
+                                    <th><a href="/Admin/HoaDonDatPhongsAdmin63132204/Index">Đơn đặt phòng</a></th>
+                                </tr>
+                                <tr>
+                                    <th><a href="/Admin/HoaDonDichVusAdmin63132204/Index">Đơn đặt dịch vụ</a></th>
+                                </tr>
+                                <tr>
+                                    <th><a href="/Admin/NhanViensAdmin63132204/Thongke63132204">Thống kê</a></th>
+                                </tr>
+                                <tr>
+                                    <th><a href="/Home/Login_63132204">Đăng xuất</a></th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            </nav>
+        </div>
+        <div class="content">
+            <div>
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+
+        <div id="footer">
+             &copy; @DateTime.Now.Year
+        </div>
+
+
     </div>
+
 </body>
+
 </html>

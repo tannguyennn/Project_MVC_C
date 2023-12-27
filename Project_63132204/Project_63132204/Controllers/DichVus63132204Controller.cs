@@ -12,7 +12,7 @@ namespace Project_63132204.Controllers
 {
     public class DichVus63132204Controller : Controller
     {
-        private Project_63132204Entities1 db = new Project_63132204Entities1();
+        private Project_63132204Entities db = new Project_63132204Entities();
 
         // GET: DichVus63132204
         public ActionResult Index()

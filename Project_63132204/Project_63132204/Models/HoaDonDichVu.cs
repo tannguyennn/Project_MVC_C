@@ -43,12 +43,12 @@ namespace Project_63132204.Models
 
         [DisplayName("Ngày đặt")]
         [Required(ErrorMessage = "Chưa nhập ngày đặt")]
+        [DisplayFormat(DataFormatString = "{0,dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime NgayDat { get; set; }
 
         [DisplayName("Số lượng")]
         [Required(ErrorMessage = "Chưa nhập số lượng")]
         public int SoLuong { get; set; }
-
 
         public virtual DichVu DichVu { get; set; }
         public virtual Phong Phong { get; set; }

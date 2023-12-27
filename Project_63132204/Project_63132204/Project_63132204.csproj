@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A7886D18-FCC1-4B54-8774-0A835FA09498}</ProjectGuid>
+    <ProjectGuid>{D699E571-9987-4FD1-AFE7-11FAE3786FDB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44379</IISExpressSSLPort>
+    <IISExpressSSLPort>44375</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -170,16 +170,18 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DichVusAdmin63132204Controller.cs" />
+    <Compile Include="Areas\Admin\Controllers\HoaDonDatPhongsAdmin63132204Controller.cs" />
+    <Compile Include="Areas\Admin\Controllers\HoaDonDichVusAdmin63132204Controller.cs" />
+    <Compile Include="Areas\Admin\Controllers\KhachHangsAdmin63132204Controller.cs" />
+    <Compile Include="Areas\Admin\Controllers\NhanViensAdmin63132204Controller.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhongsAdmin63132204Controller.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DichVus63132204Controller.cs" />
-    <Compile Include="Controllers\HoaDonDatPhongs63132204Controller.cs" />
-    <Compile Include="Controllers\HoaDonDichVus63132204Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachHangs63132204Controller.cs" />
-    <Compile Include="Controllers\LoaiDichVus63132204Controller.cs" />
-    <Compile Include="Controllers\LoaiPhongs63132204Controller.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NhanViens63132204Controller.cs" />
     <Compile Include="Controllers\Phongs63132204Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,6 +249,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\StyleAdmin.css" />
+    <Content Include="Content\StyleKH.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -273,6 +276,38 @@
     <Content Include="Models\Model_63132204.edmx.diagram">
       <DependentUpon>Model_63132204.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\KhachHangsAdmin63132204\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHangsAdmin63132204\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHangsAdmin63132204\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHangsAdmin63132204\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHangsAdmin63132204\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanViensAdmin63132204\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanViensAdmin63132204\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanViensAdmin63132204\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanViensAdmin63132204\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanViensAdmin63132204\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongsAdmin63132204\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongsAdmin63132204\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongsAdmin63132204\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongsAdmin63132204\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongsAdmin63132204\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin63132204\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin63132204\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin63132204\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin63132204\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin63132204\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDatPhongsAdmin63132204\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDatPhongsAdmin63132204\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDatPhongsAdmin63132204\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDatPhongsAdmin63132204\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDatPhongsAdmin63132204\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanViensAdmin63132204\Thongke63132204.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -319,50 +354,29 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_LayoutKH.cshtml" />
-    <Content Include="Views\Shared\_LayoutNV.cshtml" />
-    <Content Include="Views\KhachHangs63132204\Create.cshtml" />
-    <Content Include="Views\KhachHangs63132204\Delete.cshtml" />
-    <Content Include="Views\KhachHangs63132204\Details.cshtml" />
-    <Content Include="Views\KhachHangs63132204\Edit.cshtml" />
-    <Content Include="Views\KhachHangs63132204\Index.cshtml" />
-    <Content Include="Views\DichVus63132204\Create.cshtml" />
-    <Content Include="Views\DichVus63132204\Delete.cshtml" />
-    <Content Include="Views\DichVus63132204\Details.cshtml" />
-    <Content Include="Views\DichVus63132204\Edit.cshtml" />
-    <Content Include="Views\DichVus63132204\Index.cshtml" />
-    <Content Include="Views\HoaDonDatPhongs63132204\Create.cshtml" />
-    <Content Include="Views\HoaDonDatPhongs63132204\Delete.cshtml" />
-    <Content Include="Views\HoaDonDatPhongs63132204\Details.cshtml" />
-    <Content Include="Views\HoaDonDatPhongs63132204\Edit.cshtml" />
-    <Content Include="Views\HoaDonDatPhongs63132204\Index.cshtml" />
-    <Content Include="Views\HoaDonDichVus63132204\Create.cshtml" />
-    <Content Include="Views\HoaDonDichVus63132204\Delete.cshtml" />
-    <Content Include="Views\HoaDonDichVus63132204\Details.cshtml" />
-    <Content Include="Views\HoaDonDichVus63132204\Edit.cshtml" />
-    <Content Include="Views\HoaDonDichVus63132204\Index.cshtml" />
-    <Content Include="Views\LoaiDichVus63132204\Create.cshtml" />
-    <Content Include="Views\LoaiDichVus63132204\Delete.cshtml" />
-    <Content Include="Views\LoaiDichVus63132204\Details.cshtml" />
-    <Content Include="Views\LoaiDichVus63132204\Edit.cshtml" />
-    <Content Include="Views\LoaiDichVus63132204\Index.cshtml" />
-    <Content Include="Views\LoaiPhongs63132204\Create.cshtml" />
-    <Content Include="Views\LoaiPhongs63132204\Delete.cshtml" />
-    <Content Include="Views\LoaiPhongs63132204\Details.cshtml" />
-    <Content Include="Views\LoaiPhongs63132204\Edit.cshtml" />
-    <Content Include="Views\LoaiPhongs63132204\Index.cshtml" />
-    <Content Include="Views\NhanViens63132204\Create.cshtml" />
-    <Content Include="Views\NhanViens63132204\Delete.cshtml" />
-    <Content Include="Views\NhanViens63132204\Details.cshtml" />
-    <Content Include="Views\NhanViens63132204\Edit.cshtml" />
-    <Content Include="Views\NhanViens63132204\Index.cshtml" />
     <Content Include="Views\Phongs63132204\Create.cshtml" />
     <Content Include="Views\Phongs63132204\Delete.cshtml" />
     <Content Include="Views\Phongs63132204\Details.cshtml" />
     <Content Include="Views\Phongs63132204\Edit.cshtml" />
     <Content Include="Views\Phongs63132204\Index.cshtml" />
+    <Content Include="Views\DichVus63132204\Create.cshtml" />
+    <Content Include="Views\DichVus63132204\Delete.cshtml" />
+    <Content Include="Views\DichVus63132204\Details.cshtml" />
+    <Content Include="Views\DichVus63132204\Edit.cshtml" />
+    <Content Include="Views\DichVus63132204\Index.cshtml" />
+    <Content Include="Views\KhachHangs63132204\Create.cshtml" />
+    <Content Include="Views\KhachHangs63132204\Delete.cshtml" />
+    <Content Include="Views\KhachHangs63132204\Details.cshtml" />
+    <Content Include="Views\KhachHangs63132204\Edit.cshtml" />
+    <Content Include="Views\KhachHangs63132204\Index.cshtml" />
+    <Content Include="Views\Home\Login_63132204.cshtml" />
+    <Content Include="Views\Home\Register_63132204.cshtml" />
+    <Content Include="Views\Shared\_LayoutNV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
@@ -411,9 +425,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60710</DevelopmentServerPort>
+          <DevelopmentServerPort>50913</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44379/</IISUrl>
+          <IISUrl>https://localhost:44375/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

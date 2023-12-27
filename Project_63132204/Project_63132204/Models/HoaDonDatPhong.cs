@@ -38,17 +38,19 @@ namespace Project_63132204.Models
 
         [DisplayName("Ngày đặt")]
         [Required(ErrorMessage = "Chưa nhập ngày đặt")]
+        [DisplayFormat(DataFormatString = "{0,dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime NgayDat { get; set; }
         [DisplayName("Ngày vào")]
         [Required(ErrorMessage = "Chưa nhập ngày vào")]
+        [DisplayFormat(DataFormatString = "{0,dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime NgayVao { get; set; }
         [DisplayName("Ngày trả")]
         [Required(ErrorMessage = "Chưa nhập ngày trả phòng ")]
+        [DisplayFormat(DataFormatString = "{0,dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime NgayRa { get; set; }
         [DisplayName("Tình  Trạng")]
         [Required(ErrorMessage = "Chưa nhập ngày tình trạng ")]
         public bool ThanhToan { get; set; }
-    
         public virtual Phong Phong { get; set; }
         public virtual KhachHang KhachHang { get; set; }
         public virtual NhanVien NhanVien { get; set; }

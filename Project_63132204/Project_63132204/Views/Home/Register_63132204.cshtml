@@ -1,0 +1,113 @@
+﻿@model Project_63132204.Models.KhachHang
+@{
+    ViewBag.Title = "Đăng kí";
+    Layout = "~/Views/Shared/_LayoutKH.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký</title>
+    <style>
+        .form-container {
+            max-width: 50rem;
+            margin: 0 auto;
+            border: 0.5rem solid #222;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+            .form-container h3 {
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                color: #222;
+            }
+
+            .form-container .box {
+                margin: 1rem 0;
+                padding: 1.4rem;
+                color: #222;
+                border: 0.1rem solid #222;
+                font-size: 1.8rem;
+                width: 100%;
+                max-width:40rem;
+            }
+
+            .form-container p {
+                margin-top: 1.5rem;
+                font-size: 2rem;
+                color: #222;
+            }
+
+                .form-container p a {
+                    font-size: 2rem;
+                    color: #ff0000;
+                }
+
+                    .form-container p a:hover {
+                        color: #222;
+                    }
+    </style>
+</head>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <section class="form-container">
+        <form action="" method="post">
+            <h3>Đăng ký</h3>
+            <table align="center">
+                <tr>
+                    <th><input type="text" required maxlength="50" name="HoKH" placeholder="Họ của bạn" class="box"></th>
+                </tr>
+                <tr>
+                    <th><input type="text" required maxlength="50" name="TenKH" placeholder="Tên của bạn" class="box"></th>
+                </tr>
+                <tr>
+                    <th><input type="text" required maxlength="12" name="CanCuoc" placeholder="CCCD/CMND" class="box"></th>
+                </tr>
+                <tr>
+                    <th>
+                        @if (@ViewBag.gioiTinh == null)
+                        {
+                            <input type="radio" name="gioiTinh" value="1" /><text>Nam</text>
+                            <input type="radio" name="gioiTinh" value="0" /><text>Nữ</text>
+                        }
+                        else if (@ViewBag.gioiTinh == "1")
+                        {
+                            <input type="radio" name="gioiTinh" checked value="1" /><text>Nam</text>
+                            <input type="radio" name="gioiTinh" value="0" /><text>Nữ</text>
+                        }
+                        else
+                        {
+                            <input type="radio" name="gioiTinh" value="1" /><text>Nam</text>
+                            <input type="radio" name="gioiTinh" checked value="0" /><text>Nữ</text>
+                        }
+                    </th>
+                </tr>
+                <tr>
+                    <th><input type="text" required maxlength="10" class="box" name="SoDienThoai" placeholder="Số điện thoại"></th>
+                </tr>
+                <tr>
+                    <th><input type="email" required maxlength="100" name="Email" placeholder="Email" class="box"></th>
+                </tr>
+                <tr>
+                    <th> <input type="text" required maxlength="20" name="Taikhoan" placeholder="Tài khoản" class="box"></th>
+                </tr>
+                <tr>
+                    <th><input type="password" required maxlength="20" name="Matkhau" placeholder="Mật khẩu" class="box"></th>
+                </tr>
+                <tr>
+                    <th><input type="password" required maxlength="20" name="cpass" placeholder="Nhập lại mật khẩu" class="box"></th>
+                </tr>
+                <tr>
+                    <th><input type="submit" value="Đăng ký" class="btn" name="submit"></th>
+                </tr>
+
+            </table>
+            
+    
+            <p>Bạn đã có tài khoản? <a href="~/Home/Login_63132204">Đăng nhập</a></p>
+        </form>
+    </section>
+}

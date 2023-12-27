@@ -1,31 +1,16 @@
-﻿@{
-    try
-    {
-        string hoTen = Session["HoTen"].ToString();
-        if (hoTen != null)
-        {
-            ViewBag.NguoiDung = "Thông tin người dùng: " + hoTen;
-        }
-        else
-        {
-            ViewBag.NguoiDung = "Thông tin người dùng: Chưa đăng nhập ";
-        }
-    }
-    catch
-    {
-
-    }
-}
+﻿
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
+    <title>Luxury Hotel</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/5-stars.png" />
     @Styles.Render("~/Content/css")
-    <link href="~/Content/styleAdmin.css" rel="stylesheet" />
+    <link href="~/Content/StyleKH.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
-<body style="margin-top:0px;">
+<body>
     <header>
         <nav id="navbar">
             <div class="container">
@@ -34,15 +19,26 @@
                     <li><a href="../Home/Index">Trang chủ</a></li>
                     <li><a href="../Phongs63132204/Index">Đặt phòng</a></li>
                     <li><a href="../DichVus63132204/Index">Dịch vụ</a></li>
-                    <li><a href="../KhachHangs63132204/Index">Tài khoản</a></li>
+                    <li class="icons">
+                            @if (Session["id"] != null)
+                            {
+                                <a href="@Url.Action("Details", "KhachHangs63132204", new {id = Session["id"]})" class="btn"><div id="user-btn" class="fas fa-user"></a>
+                            }
+                            else
+                            {
+                               <a href="~/Home/Login_63132204"><div id="user-btn" class="fas fa-user"></a>
+                            }
+                        </div>
+                    </li>
                 </ul>
+
             </div>
         </nav>
     </header>
 
 
     <div>
-        <div >
+        <div>
             <div>
                 @RenderBody()
             </div>
@@ -53,6 +49,6 @@
     <div id="footer">
         Copyright &copy; @DateTime.Now.Year
     </div>
-    
+
 </body>
 </html>

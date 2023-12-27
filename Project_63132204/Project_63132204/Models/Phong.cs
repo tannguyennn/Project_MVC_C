@@ -42,6 +42,7 @@ namespace Project_63132204.Models
         [Required(ErrorMessage = "Chưa nhập trạng thái")]
         public bool TrangThai { get; set; }
 
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDonDatPhong> HoaDonDatPhongs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

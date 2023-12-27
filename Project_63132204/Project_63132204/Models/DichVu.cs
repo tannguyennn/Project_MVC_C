@@ -54,7 +54,6 @@ namespace Project_63132204.Models
         [Required(ErrorMessage = "Chưa nhập ảnh")]
         [StringLength(50)]
         public string Anh { get; set; }
-
         public virtual LoaiDichVu LoaiDichVu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDonDichVu> HoaDonDichVus { get; set; }
