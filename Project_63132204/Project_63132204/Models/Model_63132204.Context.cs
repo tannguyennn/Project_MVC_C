@@ -36,12 +36,8 @@ namespace Project_63132204.Models
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
     
-        public virtual int KhachHang_TimKiem(string maKH, string hoTenKH, string gioiTinh, string cCCD, string sDT)
+        public virtual int KhachHang_TimKiem(string hoTenKH, string gioiTinh)
         {
-            var maKHParameter = maKH != null ?
-                new ObjectParameter("MaKH", maKH) :
-                new ObjectParameter("MaKH", typeof(string));
-    
             var hoTenKHParameter = hoTenKH != null ?
                 new ObjectParameter("HoTenKH", hoTenKH) :
                 new ObjectParameter("HoTenKH", typeof(string));
@@ -50,23 +46,11 @@ namespace Project_63132204.Models
                 new ObjectParameter("GioiTinh", gioiTinh) :
                 new ObjectParameter("GioiTinh", typeof(string));
     
-            var cCCDParameter = cCCD != null ?
-                new ObjectParameter("CCCD", cCCD) :
-                new ObjectParameter("CCCD", typeof(string));
-    
-            var sDTParameter = sDT != null ?
-                new ObjectParameter("SDT", sDT) :
-                new ObjectParameter("SDT", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KhachHang_TimKiem", maKHParameter, hoTenKHParameter, gioiTinhParameter, cCCDParameter, sDTParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KhachHang_TimKiem", hoTenKHParameter, gioiTinhParameter);
         }
     
-        public virtual int NhanVien_TimKiem(string maNV, string hoTen, string gioiTinh)
+        public virtual int NhanVien_TimKiem(string hoTen, string gioiTinh)
         {
-            var maNVParameter = maNV != null ?
-                new ObjectParameter("MaNV", maNV) :
-                new ObjectParameter("MaNV", typeof(string));
-    
             var hoTenParameter = hoTen != null ?
                 new ObjectParameter("HoTen", hoTen) :
                 new ObjectParameter("HoTen", typeof(string));
@@ -75,7 +59,33 @@ namespace Project_63132204.Models
                 new ObjectParameter("GioiTinh", gioiTinh) :
                 new ObjectParameter("GioiTinh", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NhanVien_TimKiem", maNVParameter, hoTenParameter, gioiTinhParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NhanVien_TimKiem", hoTenParameter, gioiTinhParameter);
+        }
+    
+        public virtual ObjectResult<ThongKe_Dichvu_Result> ThongKe_Dichvu(Nullable<System.DateTime> ngayDau, Nullable<System.DateTime> ngayCuoi)
+        {
+            var ngayDauParameter = ngayDau.HasValue ?
+                new ObjectParameter("NgayDau", ngayDau) :
+                new ObjectParameter("NgayDau", typeof(System.DateTime));
+    
+            var ngayCuoiParameter = ngayCuoi.HasValue ?
+                new ObjectParameter("NgayCuoi", ngayCuoi) :
+                new ObjectParameter("NgayCuoi", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ThongKe_Dichvu_Result>("ThongKe_Dichvu", ngayDauParameter, ngayCuoiParameter);
+        }
+    
+        public virtual ObjectResult<ThongKe_HoaDon_Result> ThongKe_HoaDon(Nullable<System.DateTime> ngayDau, Nullable<System.DateTime> ngayCuoi)
+        {
+            var ngayDauParameter = ngayDau.HasValue ?
+                new ObjectParameter("NgayDau", ngayDau) :
+                new ObjectParameter("NgayDau", typeof(System.DateTime));
+    
+            var ngayCuoiParameter = ngayCuoi.HasValue ?
+                new ObjectParameter("NgayCuoi", ngayCuoi) :
+                new ObjectParameter("NgayCuoi", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ThongKe_HoaDon_Result>("ThongKe_HoaDon", ngayDauParameter, ngayCuoiParameter);
         }
     }
 }

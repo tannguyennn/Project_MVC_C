@@ -13,25 +13,25 @@ namespace Project_63132204.Areas.Admin.Controllers
     public class KhachHangsAdmin63132204Controller : Controller
     {
         private Project_63132204Entities db = new Project_63132204Entities();
-        string LayMaKH()
-        {
-            var maMax = db.KhachHangs.ToList().Select(n => n.MaKH).Max();
-            int maKH = int.Parse(maMax.Substring(2)) + 1;
-            string KH = String.Concat("000", maKH.ToString());
-            return "KH" + KH.Substring(maKH.ToString().Length - 1);
-        }
 
         // GET: Admin/KhachHangsAdmin63132204
         [HttpGet]
-        public ActionResult Index(String maKH, String hoTen, String gioiTinh)
+        public ActionResult Index( String hoTen, String gioiTinh)
         {
-            var khachHangs = db.KhachHangs.SqlQuery("exec KhachHang_TimKiem '"+maKH+"', N'"+hoTen+"', N'"+gioiTinh+"' ");
-            return View(khachHangs.ToList());
+            if (hoTen == null || gioiTinh == null)
+            {
+                return View(db.KhachHangs.ToList());
+            }
+            else
+            {
+                var khachhangs = db.KhachHangs.SqlQuery("exec KhachHang_TimKiem N'" + hoTen + "' ,N'" + gioiTinh + "'");
+                return View(khachhangs.ToList());
+            }
         }
         
 
         // GET: Admin/KhachHangsAdmin63132204/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -69,7 +69,7 @@ namespace Project_63132204.Areas.Admin.Controllers
         }
 
         // GET: Admin/KhachHangsAdmin63132204/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {

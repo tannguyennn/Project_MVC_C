@@ -24,23 +24,18 @@ namespace Project_63132204.Models
 
         [DisplayName("Mã Loại phòng")]
         [Required(ErrorMessage = "Chưa nhập mã loại phòng")]
-        [StringLength(10)]
-        public string MaLoaiPhong { get; set; }
-
+        public int MaLoaiPhong { get; set; }
         [DisplayName("Tên loại phòng")]
         [Required(ErrorMessage = "Chưa nhập tên loại phòng")]
-        [StringLength(50)]
         public string TenLoaiPhong { get; set; }
-
         [DisplayName("Giá")]
         [Required(ErrorMessage = "Chưa nhập Giá")]
         public int Gia { get; set; }
 
         [DisplayName("Ảnh")]
         [Required(ErrorMessage = "Chưa nhập ảnh")]
-        [StringLength(50)]
         public string Anh { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Phong> Phongs { get; set; }
     }

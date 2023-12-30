@@ -3,44 +3,27 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutNV.cshtml";
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "MaPhong", rowsPerPage: 7);
 }
 
-<h2>Index</h2>
+<h2>DANH SÁCH PHÒNG</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TenPhong)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrangThai)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LoaiPhong.TenLoaiPhong)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenPhong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrangThai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LoaiPhong.TenLoaiPhong)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaPhong }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaPhong }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaPhong })
-        </td>
-    </tr>
+<div id="gridContent">
+    @ViewBag.TB
+    @grid.GetHtml(
+        tableStyle: "table table-bordered table-hover",
+        footerStyle: "grid-footer",
+        fillEmptyRows: true,
+        mode: WebGridPagerModes.Numeric,
+        alternatingRowStyle: "alternatingRowStyle",
+          columns: new[]  // colums in grid
+         {
+         grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+        grid.Column("MaPhong","Mã phòng"),
+        grid.Column("TenPhong","Tên phòng"  ),
+        grid.Column("LoaiPhong.TenLoaiPhong","Tên loại phòng"),
+        grid.Column("TrangThai","Trạng thái",format: (@item) => @item.TrangThai==true?"Đã đặt":"Còn trống"),
+        grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","PhongsAdmin63132204", new { id = item.MaPhong },"PhongsAdmin63132204Controller")),
 }
-
-</table>
+)
+</div>

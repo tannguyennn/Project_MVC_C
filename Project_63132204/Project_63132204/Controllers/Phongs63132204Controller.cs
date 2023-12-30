@@ -22,7 +22,7 @@ namespace Project_63132204.Controllers
         }
 
         // GET: Phongs63132204/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {

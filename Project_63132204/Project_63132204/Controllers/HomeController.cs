@@ -40,10 +40,6 @@ namespace Project_63132204.Controllers
             var data = db.NhanViens.Where(s => s.TKNV.Equals(taikhoan) && s.MKNV.Equals(password));
             if (data.Count() > 0)
             {
-                String ho = data.FirstOrDefault().HoNV;
-                String ten = data.FirstOrDefault().TenNV;
-                //add session
-                Session["name"] = ho+" "+ten;
                 Session["taikhoan"] = data.FirstOrDefault().TKNV;
                 Session["id"] = data.FirstOrDefault().MaNV;
                 return RedirectToAction("Index", "Admin/NhanViensAdmin63132204");
@@ -73,7 +69,7 @@ namespace Project_63132204.Controllers
         //POST: Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register_63132204(KhachHang _user)
+        public ActionResult Register_63132204( KhachHang _user)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +83,7 @@ namespace Project_63132204.Controllers
                     Session["Taikhoan"] = _user.TKKH;
                     Session["id"] = _user.MaKH;
                     ViewBag.SuccessMessage = "Đăng ký thành công!";
-                    return RedirectToAction("Login", "Home");
+                    return RedirectToAction("Login_63132204", "Home");
                 }
                 else
                 {

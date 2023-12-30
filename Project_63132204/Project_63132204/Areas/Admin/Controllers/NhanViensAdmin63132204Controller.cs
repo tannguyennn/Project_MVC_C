@@ -24,7 +24,7 @@ namespace Project_63132204.Areas.Admin.Controllers
         }
 
         // GET: Admin/NhanViensAdmin63132204/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {

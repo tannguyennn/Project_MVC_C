@@ -1,7 +1,7 @@
 ﻿@model Project_63132204.Models.NhanVien
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutNV.cshtml";
 }
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                Họ khách hàng:
+                Họ nhân viên:
             </dt>
     
             <dd>
@@ -25,7 +25,7 @@
             </dd>
     
             <dt>
-               Tên khách hàng:
+               Tên nhân viên:
             </dt>
     
             <dd>
@@ -71,22 +71,7 @@
             <dd>
                 @Html.DisplayFor(model => model.Luong)
             </dd>
-    
-            <dt>
-                Tài khoản:
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.TKNV)
-            </dd>
-    
-            <dt>
-               Mật khẩu:
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.MKNV)
-            </dd>
+   
     
         </dl>
     </div>

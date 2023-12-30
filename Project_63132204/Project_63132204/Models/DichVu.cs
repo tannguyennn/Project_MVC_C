@@ -24,36 +24,26 @@ namespace Project_63132204.Models
 
         [DisplayName("Mã DV")]
         [Required(ErrorMessage = "Chưa nhập mã DV")]
-        [StringLength(10)]
-        public string MaDV { get; set; }
-
+        public int MaDV { get; set; }
         [DisplayName("Tên DV")]
         [Required(ErrorMessage = "Chưa nhập tên DV")]
-        [StringLength(50)]
         public string TenDV { get; set; }
-
         [DisplayName("Mã LDV")]
         [Required(ErrorMessage = "Chưa nhập mã loại dịch vụ")]
-        [StringLength(10)]
-        public string MaLDV { get; set; }
-
+        public Nullable<int> MaLDV { get; set; }
         [DisplayName("Giá")]
         [Required(ErrorMessage = "Chưa nhập Giá")]
         public int Gia { get; set; }
-
         [DisplayName("Số lượng tồn kho")]
         [Required(ErrorMessage = "Chưa nhập số lượng")]
         public int TonKho { get; set; }
-
         [DisplayName("Đơn vị tính")]
         [Required(ErrorMessage = "Chưa nhập đơn vị tính")]
-        [StringLength(50)]
         public string DonVi { get; set; }
-
         [DisplayName("Ảnh")]
         [Required(ErrorMessage = "Chưa nhập ảnh")]
-        [StringLength(50)]
         public string Anh { get; set; }
+    
         public virtual LoaiDichVu LoaiDichVu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDonDichVu> HoaDonDichVus { get; set; }

@@ -20,8 +20,7 @@
      grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
     grid.Column("MaHDDV","Mã đặt hàng"), //the model fields to display
     grid.Column("Phong.TenPhong","Tên Phòng"),
-    grid.Column("NhanVien.TenNV","Tên Nhân viên"),
-    grid.Column("KhachHang.TenKH","Tên Nhân viên"),
+    grid.Column("KhachHang.TenKH","Tên Khách hàng"),
     grid.Column("SoLuong","Số Lượng"),
     grid.Column("NgayDat","Ngày đặt",format:@<text> @item.NgayDat.ToString("dd/MM/yyyy")</text>),
     grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","HoaDonDichVusAdmin63132204", new { id = item.MaHDDV },"HoaDonDichVusAdmin63132204Controller")),

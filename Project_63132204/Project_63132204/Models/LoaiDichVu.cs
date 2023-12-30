@@ -24,14 +24,11 @@ namespace Project_63132204.Models
 
         [DisplayName("Họ LDV")]
         [Required(ErrorMessage = "Chưa nhập mã LDV")]
-        [StringLength(10)]
-        public string MaLDV { get; set; }
-
+        public int MaLDV { get; set; }
         [DisplayName("Tên LDV")]
         [Required(ErrorMessage = "Chưa nhập tên LDV")]
-        [StringLength(30)]
         public string TenLDV { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DichVu> DichVus { get; set; }
     }

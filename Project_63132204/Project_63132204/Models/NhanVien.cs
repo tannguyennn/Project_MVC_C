@@ -16,33 +16,21 @@ namespace Project_63132204.Models
 
     public partial class NhanVien
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NhanVien()
-        {
-            this.HoaDonDatPhongs = new HashSet<HoaDonDatPhong>();
-            this.HoaDonDichVus = new HashSet<HoaDonDichVu>();
-        }
-
         [DisplayName("Mã số NV")]
         [Required(ErrorMessage = "Chưa nhập mã nhân viên")]
-        [StringLength(10)]
-        public string MaNV { get; set; }
-
+        public int MaNV { get; set; }
         [DisplayName("Họ nhân viên")]
         [Required(ErrorMessage = "Chưa nhập họ nhân viên")]
         [StringLength(50)]
         public string HoNV { get; set; }
-
         [DisplayName("Tên nhân viên")]
         [Required(ErrorMessage = "Chưa nhập tên nhân viên")]
         [StringLength(50)]
         public string TenNV { get; set; }
-
         [DisplayName("Ngày sinh")]
         [Required(ErrorMessage = "Chưa nhập ngày sinh")]
         [DisplayFormat(DataFormatString = "{0,dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime NgaySinh { get; set; }
-
         [DisplayName("Giới tính")]
         [Required(ErrorMessage = "Chưa nhập giới tính")]
         public string GioiTinh { get; set; }
@@ -59,20 +47,13 @@ namespace Project_63132204.Models
         [DisplayName("Lương")]
         [Required(ErrorMessage = "Chưa nhập lương")]
         public int Luong { get; set; }
-
         [DisplayName("Tài khoản")]
         [Required(ErrorMessage = "Chưa nhập tên tài khoản")]
         [StringLength(50)]
         public string TKNV { get; set; }
-
         [DisplayName("Mật khẩu")]
         [Required(ErrorMessage = "Chưa nhập mật khẩu")]
         [StringLength(30)]
         public string MKNV { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HoaDonDatPhong> HoaDonDatPhongs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HoaDonDichVu> HoaDonDichVus { get; set; }
     }
 }

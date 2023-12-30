@@ -18,41 +18,27 @@ namespace Project_63132204.Models
     {
         [DisplayName("Mã HDDV")]
         [Required(ErrorMessage = "Chưa nhập mã hóa đơn dịch vụ")]
-        [StringLength(10)]
-        public string MaHDDV { get; set; }
-
+        public int MaHDDV { get; set; }
         [DisplayName("Mã phòng")]
         [Required(ErrorMessage = "Chưa nhập mã phòng")]
-        [StringLength(10)]
-        public string MaPhong { get; set; }
-
-        [DisplayName("Mã NV")]
-        [Required(ErrorMessage = "Chưa nhập mã nhân viên")]
-        [StringLength(10)]
-        public string MaNV { get; set; }
-
+        public Nullable<int> MaPhong { get; set; }
         [DisplayName("Mã số KH")]
         [Required(ErrorMessage = "Chưa nhập mã KH")]
-        [StringLength(10)]
-        public string MaKH { get; set; }
-
-        [DisplayName("Mã Dv")]
+        public Nullable<int> MaKH { get; set; }
+        [DisplayName("Mã dịch vụ")]
         [Required(ErrorMessage = "Chưa nhập mã dịch vụ")]
         [StringLength(10)]
-        public string MaDV { get; set; }
-
+        public Nullable<int> MaDV { get; set; }
         [DisplayName("Ngày đặt")]
         [Required(ErrorMessage = "Chưa nhập ngày đặt")]
         [DisplayFormat(DataFormatString = "{0,dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime NgayDat { get; set; }
-
         [DisplayName("Số lượng")]
         [Required(ErrorMessage = "Chưa nhập số lượng")]
         public int SoLuong { get; set; }
-
+    
         public virtual DichVu DichVu { get; set; }
         public virtual Phong Phong { get; set; }
         public virtual KhachHang KhachHang { get; set; }
-        public virtual NhanVien NhanVien { get; set; }
     }
 }

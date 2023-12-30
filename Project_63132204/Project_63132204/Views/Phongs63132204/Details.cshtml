@@ -132,7 +132,15 @@
                 {
                 <h5>
                     Còn trống
-                    <button type="button" class="fas fa-shopping-cart" name="add_to_cart"></button>
+                    <br />
+                    @if (Session["id"] != null)
+                    {
+                        <a href="@Url.Action("Create", "HoaDonDatPhongs63132204")" class="btn fas fa-user" id="user-btn"> Đặt phòng</a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Login_63132204", "Home")" class="btn fas fa-user" id="user-btn"> Đặt phòng</a>
+                    }
                 </h5>
                 }
                 

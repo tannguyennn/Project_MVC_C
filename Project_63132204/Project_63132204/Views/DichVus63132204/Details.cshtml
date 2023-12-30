@@ -126,13 +126,14 @@
                 <h3>@Html.DisplayFor(model => model.TenDV)</h3>
                 <h4>@Html.DisplayFor(model => model.Gia)<small> vnd</small></h4>
 
-                <h5>Số lượng</h5>
-                <div class="add flex1">
-                    <span>-</span>
-                    <label>1</label>
-                    <span>+</span>
-                </div>
-                <button type="button" class="fas fa-shopping-cart" name="add_to_cart"></button>
+                @if (Session["id"] != null)
+                {
+                    <a href="@Url.Action("Create", "HoaDonDichVus63132204")" class="btn fas fa-user" id="user-btn"> Đặt Hàng</a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Login_63132204", "Home")" class="btn fas fa-user" id="user-btn"> Đặt Hàng</a>
+                }
             </div>
         </div>
         <p>

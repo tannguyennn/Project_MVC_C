@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "DANH SÁCH KHÁCH HÀNG";
     Layout = "~/Views/Shared/_LayoutNV.cshtml";
-    var grid = new WebGrid(Model, canPage: true, defaultSort: "TenKH", rowsPerPage: 10);
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "MaKH", rowsPerPage: 10);
 }
 
 <html>
@@ -21,15 +21,6 @@
 
             <table class="table2" align="center">
                 <tr>
-                    <td>
-                        <div> Mã Khách hàng</div>
-                    </td>
-                    <td>
-                        <input type="text" name="maKH" value="@ViewBag.maKH" />
-                    </td>
-
-                </tr>
-                <tr>
                     <td>Họ tên</td>
                     <td>
                         <input type="text" name="hoTen" value="@ViewBag.hoTen" />
@@ -41,24 +32,19 @@
                     <td>
                         @if (@ViewBag.gioiTinh == null)
                         {
-                            <input type="radio" name="gioiTinh" value="1" /><text>Nam</text>
-                            <input type="radio" name="gioiTinh" value="0" /><text>Nữ</text>
+                            <input type="radio" name="gioiTinh" value="Nam" /><text>Nam</text>
+                            <input type="radio" name="gioiTinh" value="Nữ" /><text>Nữ</text>
                         }
-                        else if (@ViewBag.gioiTinh == "1")
+                        else if (@ViewBag.gioiTinh == "Nam")
                         {
-                            <input type="radio" name="gioiTinh" checked value="1" /><text>Nam</text>
-                            <input type="radio" name="gioiTinh" value="0" /><text>Nữ</text>
+                            <input type="radio" name="gioiTinh" checked value="Nam" /><text>Nam</text>
+                            <input type="radio" name="gioiTinh" value="Nữ" /><text>Nữ</text>
                         }
                         else
                         {
-                            <input type="radio" name="gioiTinh" value="1" /><text>Nam</text>
-                            <input type="radio" name="gioiTinh" checked value="0" /><text>Nữ</text>
+                            <input type="radio" name="gioiTinh" value="Nam" /><text>Nam</text>
+                            <input type="radio" name="gioiTinh" checked value="Nữ" /><text>Nữ</text>
                         }
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="date" />
                     </td>
                 </tr>
                 <tr>

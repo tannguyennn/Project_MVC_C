@@ -16,19 +16,18 @@
             <div class="container">
                 <h1 class="logo"><a href="../Home/Index">LUXURY HOTEL</a></h1>
                 <ul>
-                    <li><a href="../Home/Index">Trang chủ</a></li>
-                    <li><a href="../Phongs63132204/Index">Đặt phòng</a></li>
-                    <li><a href="../DichVus63132204/Index">Dịch vụ</a></li>
+                    <li><a href="/Home/Index">Trang chủ</a></li>
+                    <li><a href="/Phongs63132204/Index">Đặt phòng</a></li>
+                    <li><a href="/DichVus63132204/Index">Dịch vụ</a></li>
                     <li class="icons">
-                            @if (Session["id"] != null)
-                            {
-                                <a href="@Url.Action("Details", "KhachHangs63132204", new {id = Session["id"]})" class="btn"><div id="user-btn" class="fas fa-user"></a>
-                            }
-                            else
-                            {
-                               <a href="~/Home/Login_63132204"><div id="user-btn" class="fas fa-user"></a>
-                            }
-                        </div>
+                        @if (Session["id"] != null)
+                        {
+                                                       <div id="user-btn" class="fas fa-user" > <a href="@Url.Action("Details", "KhachHangs63132204", new {id = Session["id"]})" class="btn"></a> </div>
+                        }
+                        else
+                        {
+                            <div id="user-btn" class="fas fa-user"><a href="~/Home/Login_63132204"></a> </div>
+                        }
                     </li>
                 </ul>
 

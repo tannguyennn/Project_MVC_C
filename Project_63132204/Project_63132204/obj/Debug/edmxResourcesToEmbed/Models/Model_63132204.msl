@@ -18,7 +18,6 @@
       <EntityTypeMapping TypeName="Project_63132204Model.HoaDonDatPhong">
         <MappingFragment StoreEntitySet="HoaDonDatPhong">
           <ScalarProperty Name="MaDatPhong" ColumnName="MaDatPhong" />
-          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
           <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
@@ -33,7 +32,6 @@
         <MappingFragment StoreEntitySet="HoaDonDichVu">
           <ScalarProperty Name="MaHDDV" ColumnName="MaHDDV" />
           <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
-          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="MaDV" ColumnName="MaDV" />
           <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
@@ -102,5 +100,30 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="KhachHang_TimKiem" FunctionName="Project_63132204Model.Store.KhachHang_TimKiem" />
     <FunctionImportMapping FunctionImportName="NhanVien_TimKiem" FunctionName="Project_63132204Model.Store.NhanVien_TimKiem" />
+    <FunctionImportMapping FunctionImportName="ThongKe_Dichvu" FunctionName="Project_63132204Model.Store.ThongKe_Dichvu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Project_63132204Model.ThongKe_Dichvu_Result">
+          <ScalarProperty Name="MaHDDV" ColumnName="MaHDDV" />
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+          <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ThongKe_HoaDon" FunctionName="Project_63132204Model.Store.ThongKe_HoaDon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Project_63132204Model.ThongKe_HoaDon_Result">
+          <ScalarProperty Name="MaDatPhong" ColumnName="MaDatPhong" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+          <ScalarProperty Name="NgayVao" ColumnName="NgayVao" />
+          <ScalarProperty Name="NgayRa" ColumnName="NgayRa" />
+          <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

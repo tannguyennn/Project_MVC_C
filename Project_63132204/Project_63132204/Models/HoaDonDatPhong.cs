@@ -18,24 +18,13 @@ namespace Project_63132204.Models
     {
         [DisplayName("Mã đặt phòng")]
         [Required(ErrorMessage = "Chưa nhập mã đặt phòng")]
-        [StringLength(10)]
-        public string MaDatPhong { get; set; }
-
-        [DisplayName("Mã Nhân viên")]
-        [Required(ErrorMessage = "Chưa nhập mã nhân viên")]
-        [StringLength(10)]
-        public string MaNV { get; set; }
-
+        public int MaDatPhong { get; set; }
         [DisplayName("Mã khách hàng")]
         [Required(ErrorMessage = "Chưa nhập mã khách hàng")]
-        [StringLength(10)]
-        public string MaKH { get; set; }
-
+        public Nullable<int> MaKH { get; set; }
         [DisplayName("Mã phòng")]
         [Required(ErrorMessage = "Chưa nhập mã phòng")]
-        [StringLength(10)]
-        public string MaPhong { get; set; }
-
+        public Nullable<int> MaPhong { get; set; }
         [DisplayName("Ngày đặt")]
         [Required(ErrorMessage = "Chưa nhập ngày đặt")]
         [DisplayFormat(DataFormatString = "{0,dd/MM/yyyy}", ApplyFormatInEditMode = true)]
@@ -51,8 +40,8 @@ namespace Project_63132204.Models
         [DisplayName("Tình  Trạng")]
         [Required(ErrorMessage = "Chưa nhập ngày tình trạng ")]
         public bool ThanhToan { get; set; }
+    
         public virtual Phong Phong { get; set; }
         public virtual KhachHang KhachHang { get; set; }
-        public virtual NhanVien NhanVien { get; set; }
     }
 }

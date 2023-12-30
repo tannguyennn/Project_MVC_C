@@ -179,6 +179,8 @@
     <Compile Include="Areas\Admin\Controllers\PhongsAdmin63132204Controller.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DichVus63132204Controller.cs" />
+    <Compile Include="Controllers\HoaDonDatPhongs63132204Controller.cs" />
+    <Compile Include="Controllers\HoaDonDichVus63132204Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachHangs63132204Controller.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -228,6 +230,12 @@
     <Compile Include="Models\Phong.cs">
       <DependentUpon>Model_63132204.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ThongKe_Dichvu_Result.cs">
+      <DependentUpon>Model_63132204.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ThongKe_HoaDon_Result.cs">
+      <DependentUpon>Model_63132204.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -271,13 +279,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Model_63132204.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model_63132204.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model_63132204.edmx.diagram">
-      <DependentUpon>Model_63132204.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\KhachHangsAdmin63132204\Create.cshtml" />
     <Content Include="Areas\Admin\Views\KhachHangsAdmin63132204\Delete.cshtml" />
@@ -310,6 +311,13 @@
     <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDonDichVusAdmin63132204\Index.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDonDatPhongsAdmin63132204\Thongke63132204.cshtml" />
+    <EntityDeploy Include="Models\Model_63132204.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_63132204.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model_63132204.edmx.diagram">
+      <DependentUpon>Model_63132204.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -374,6 +382,16 @@
     <Content Include="Views\Home\Login_63132204.cshtml" />
     <Content Include="Views\Home\Register_63132204.cshtml" />
     <Content Include="Views\Shared\_LayoutNV.cshtml" />
+    <Content Include="Views\HoaDonDatPhongs63132204\Create.cshtml" />
+    <Content Include="Views\HoaDonDatPhongs63132204\Delete.cshtml" />
+    <Content Include="Views\HoaDonDatPhongs63132204\Details.cshtml" />
+    <Content Include="Views\HoaDonDatPhongs63132204\Edit.cshtml" />
+    <Content Include="Views\HoaDonDatPhongs63132204\Index.cshtml" />
+    <Content Include="Views\HoaDonDichVus63132204\Create.cshtml" />
+    <Content Include="Views\HoaDonDichVus63132204\Delete.cshtml" />
+    <Content Include="Views\HoaDonDichVus63132204\Details.cshtml" />
+    <Content Include="Views\HoaDonDichVus63132204\Edit.cshtml" />
+    <Content Include="Views\HoaDonDichVus63132204\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

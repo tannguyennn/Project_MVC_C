@@ -64,41 +64,41 @@
                     <th><input type="text" required maxlength="50" name="TenKH" placeholder="Tên của bạn" class="box"></th>
                 </tr>
                 <tr>
-                    <th><input type="text" required maxlength="12" name="CanCuoc" placeholder="CCCD/CMND" class="box"></th>
+                    <th><input type="text" required maxlength="12" name="CCCD" placeholder="CCCD/CMND" class="box"></th>
                 </tr>
                 <tr>
                     <th>
                         @if (@ViewBag.gioiTinh == null)
                         {
-                            <input type="radio" name="gioiTinh" value="1" /><text>Nam</text>
-                            <input type="radio" name="gioiTinh" value="0" /><text>Nữ</text>
+                            <input type="radio" name="gioiTinh" value="Nam" /><text>Nam</text>
+                            <input type="radio" name="gioiTinh" value="Nữ" /><text>Nữ</text>
                         }
-                        else if (@ViewBag.gioiTinh == "1")
+                        else if (@ViewBag.gioiTinh == "Nam")
                         {
-                            <input type="radio" name="gioiTinh" checked value="1" /><text>Nam</text>
-                            <input type="radio" name="gioiTinh" value="0" /><text>Nữ</text>
+                            <input type="radio" name="gioiTinh" checked value="Nam" /><text>Nam</text>
+                            <input type="radio" name="gioiTinh" value="Nữ" /><text>Nữ</text>
                         }
                         else
                         {
-                            <input type="radio" name="gioiTinh" value="1" /><text>Nam</text>
-                            <input type="radio" name="gioiTinh" checked value="0" /><text>Nữ</text>
+                            <input type="radio" name="gioiTinh" value="Nam" /><text>Nam</text>
+                            <input type="radio" name="gioiTinh" checked value="Nữ" /><text>Nữ</text>
                         }
                     </th>
                 </tr>
                 <tr>
-                    <th><input type="text" required maxlength="10" class="box" name="SoDienThoai" placeholder="Số điện thoại"></th>
+                    <th><input type="text" required maxlength="10" name="SDT" placeholder="Số điện thoại" class="box"></th>
                 </tr>
                 <tr>
                     <th><input type="email" required maxlength="100" name="Email" placeholder="Email" class="box"></th>
                 </tr>
                 <tr>
-                    <th> <input type="text" required maxlength="20" name="Taikhoan" placeholder="Tài khoản" class="box"></th>
+                    <th> <input type="text" required maxlength="20" name="TKKH" placeholder="Tài khoản" class="box"></th>
                 </tr>
                 <tr>
-                    <th><input type="password" required maxlength="20" name="Matkhau" placeholder="Mật khẩu" class="box"></th>
+                    <th><input type="password" required maxlength="20" name="MKKH" placeholder="Mật khẩu" class="box"></th>
                 </tr>
                 <tr>
-                    <th><input type="password" required maxlength="20" name="cpass" placeholder="Nhập lại mật khẩu" class="box"></th>
+                    <th><input type="password" required maxlength="20"  name="cpass" placeholder="Nhập lại mật khẩu" class="box"></th>
                 </tr>
                 <tr>
                     <th><input type="submit" value="Đăng ký" class="btn" name="submit"></th>

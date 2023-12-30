@@ -17,12 +17,12 @@ namespace Project_63132204.Areas.Admin.Controllers
         // GET: Admin/HoaDonDichVusAdmin63132204
         public ActionResult Index()
         {
-            var hoaDonDichVus = db.HoaDonDichVus.Include(h => h.DichVu).Include(h => h.Phong).Include(h => h.KhachHang).Include(h => h.NhanVien);
+            var hoaDonDichVus = db.HoaDonDichVus.Include(h => h.DichVu).Include(h => h.Phong).Include(h => h.KhachHang);
             return View(hoaDonDichVus.ToList());
         }
 
         // GET: Admin/HoaDonDichVusAdmin63132204/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -41,8 +41,7 @@ namespace Project_63132204.Areas.Admin.Controllers
         {
             ViewBag.MaDV = new SelectList(db.DichVus, "MaDV", "TenDV");
             ViewBag.MaPhong = new SelectList(db.Phongs, "MaPhong", "TenPhong");
-            ViewBag.MaKH = new SelectList(db.KhachHangs, "MaKH", "HoKH");
-            ViewBag.MaNV = new SelectList(db.NhanViens, "MaNV", "HoNV");
+            ViewBag.MaKH = new SelectList(db.KhachHangs, "MaKH", "MaKH");
             return View();
         }
 
@@ -51,7 +50,7 @@ namespace Project_63132204.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaHDDV,MaPhong,MaNV,MaKH,MaDV,NgayDat,SoLuong")] HoaDonDichVu hoaDonDichVu)
+        public ActionResult Create([Bind(Include = "MaHDDV,MaPhong,MaKH,MaDV,NgayDat,SoLuong")] HoaDonDichVu hoaDonDichVu)
         {
             if (ModelState.IsValid)
             {
@@ -62,8 +61,7 @@ namespace Project_63132204.Areas.Admin.Controllers
 
             ViewBag.MaDV = new SelectList(db.DichVus, "MaDV", "TenDV", hoaDonDichVu.MaDV);
             ViewBag.MaPhong = new SelectList(db.Phongs, "MaPhong", "TenPhong", hoaDonDichVu.MaPhong);
-            ViewBag.MaKH = new SelectList(db.KhachHangs, "MaKH", "HoKH", hoaDonDichVu.MaKH);
-            ViewBag.MaNV = new SelectList(db.NhanViens, "MaNV", "HoNV", hoaDonDichVu.MaNV);
+            ViewBag.MaKH = new SelectList(db.KhachHangs, "MaKH", "MaKH", hoaDonDichVu.MaKH);
             return View(hoaDonDichVu);
         }
 
@@ -81,8 +79,7 @@ namespace Project_63132204.Areas.Admin.Controllers
             }
             ViewBag.MaDV = new SelectList(db.DichVus, "MaDV", "TenDV", hoaDonDichVu.MaDV);
             ViewBag.MaPhong = new SelectList(db.Phongs, "MaPhong", "TenPhong", hoaDonDichVu.MaPhong);
-            ViewBag.MaKH = new SelectList(db.KhachHangs, "MaKH", "HoKH", hoaDonDichVu.MaKH);
-            ViewBag.MaNV = new SelectList(db.NhanViens, "MaNV", "HoNV", hoaDonDichVu.MaNV);
+            ViewBag.MaKH = new SelectList(db.KhachHangs, "MaKH", "MaKH", hoaDonDichVu.MaKH);
             return View(hoaDonDichVu);
         }
 
@@ -91,7 +88,7 @@ namespace Project_63132204.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaHDDV,MaPhong,MaNV,MaKH,MaDV,NgayDat,SoLuong")] HoaDonDichVu hoaDonDichVu)
+        public ActionResult Edit([Bind(Include = "MaHDDV,MaPhong,MaKH,MaDV,NgayDat,SoLuong")] HoaDonDichVu hoaDonDichVu)
         {
             if (ModelState.IsValid)
             {
@@ -101,8 +98,7 @@ namespace Project_63132204.Areas.Admin.Controllers
             }
             ViewBag.MaDV = new SelectList(db.DichVus, "MaDV", "TenDV", hoaDonDichVu.MaDV);
             ViewBag.MaPhong = new SelectList(db.Phongs, "MaPhong", "TenPhong", hoaDonDichVu.MaPhong);
-            ViewBag.MaKH = new SelectList(db.KhachHangs, "MaKH", "HoKH", hoaDonDichVu.MaKH);
-            ViewBag.MaNV = new SelectList(db.NhanViens, "MaNV", "HoNV", hoaDonDichVu.MaNV);
+            ViewBag.MaKH = new SelectList(db.KhachHangs, "MaKH", "MaKH", hoaDonDichVu.MaKH);
             return View(hoaDonDichVu);
         }
 

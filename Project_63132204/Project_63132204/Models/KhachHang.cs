@@ -25,46 +25,39 @@ namespace Project_63132204.Models
 
         [DisplayName("Mã số KH")]
         [Required(ErrorMessage = "Chưa nhập mã KH")]
-        [StringLength(10)]
-        public string MaKH { get; set; }
-
+        public int MaKH { get; set; }
         [DisplayName("Họ KH")]
         [Required(ErrorMessage = "Chưa nhập họ KH")]
         [StringLength(50)]
         public string HoKH { get; set; }
-
         [DisplayName("Tên KH")]
         [Required(ErrorMessage = "Chưa nhập Tên KH")]
         [StringLength(50)]
         public string TenKH { get; set; }
-
         [DisplayName("Số CCCD KH")]
         [Required(ErrorMessage = "Chưa nhập CCCD")]
         [StringLength(12)]
         public string CCCD { get; set; }
-
         [DisplayName("Giới tính")]
         [Required(ErrorMessage = "Chưa nhập Giới tính")]
         public string GioiTinh { get; set; }
-
         [DisplayName("Số điện thoại")]
         [Required(ErrorMessage = "Chưa nhập SDT")]
         [StringLength(10)]
         public string SDT { get; set; }
-
         [DisplayName("Email")]
         [Required(ErrorMessage = "Chưa nhập email")]
         [StringLength(50)]
         public string Email { get; set; }
-
         [DisplayName("Tài khoản")]
+        [Required(ErrorMessage = "Nhập tài khoản")]
         [StringLength(50)]
         public string TKKH { get; set; }
         [DisplayName("Mật khẩu")]
+        [Required(ErrorMessage = "Nhập mật khẩu")]
         [StringLength(30)]
         public string MKKH { get; set; }
-
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDonDatPhong> HoaDonDatPhongs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

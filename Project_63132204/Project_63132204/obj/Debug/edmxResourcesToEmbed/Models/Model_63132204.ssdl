@@ -4,9 +4,9 @@
     <Key>
       <PropertyRef Name="MaDV" />
     </Key>
-    <Property Name="MaDV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaDV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenDV" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="MaLDV" Type="varchar" MaxLength="10" />
+    <Property Name="MaLDV" Type="int" />
     <Property Name="Gia" Type="int" Nullable="false" />
     <Property Name="TonKho" Type="int" Nullable="false" />
     <Property Name="DonVi" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -15,12 +15,10 @@
   <EntityType Name="HoaDonDatPhong">
     <Key>
       <PropertyRef Name="MaDatPhong" />
-      <PropertyRef Name="MaPhong" />
     </Key>
-    <Property Name="MaDatPhong" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="MaNV" Type="varchar" MaxLength="10" />
-    <Property Name="MaKH" Type="varchar" MaxLength="10" />
-    <Property Name="MaPhong" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaDatPhong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="MaPhong" Type="int" />
     <Property Name="NgayDat" Type="date" Nullable="false" />
     <Property Name="NgayVao" Type="date" Nullable="false" />
     <Property Name="NgayRa" Type="date" Nullable="false" />
@@ -29,13 +27,11 @@
   <EntityType Name="HoaDonDichVu">
     <Key>
       <PropertyRef Name="MaHDDV" />
-      <PropertyRef Name="MaDV" />
     </Key>
-    <Property Name="MaHDDV" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="MaPhong" Type="varchar" MaxLength="10" />
-    <Property Name="MaNV" Type="varchar" MaxLength="10" />
-    <Property Name="MaKH" Type="varchar" MaxLength="10" />
-    <Property Name="MaDV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaHDDV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaPhong" Type="int" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="MaDV" Type="int" />
     <Property Name="NgayDat" Type="date" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
   </EntityType>
@@ -43,7 +39,7 @@
     <Key>
       <PropertyRef Name="MaKH" />
     </Key>
-    <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HoKH" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TenKH" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="CCCD" Type="varchar" MaxLength="12" Nullable="false" />
@@ -57,14 +53,14 @@
     <Key>
       <PropertyRef Name="MaLDV" />
     </Key>
-    <Property Name="MaLDV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaLDV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenLDV" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <EntityType Name="LoaiPhong">
     <Key>
       <PropertyRef Name="MaLoaiPhong" />
     </Key>
-    <Property Name="MaLoaiPhong" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaLoaiPhong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenLoaiPhong" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Gia" Type="int" Nullable="false" />
     <Property Name="Anh" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -73,11 +69,11 @@
     <Key>
       <PropertyRef Name="MaNV" />
     </Key>
-    <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaNV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HoNV" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TenNV" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="NgaySinh" Type="date" Nullable="false" />
-    <Property Name="GioiTinh" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" Nullable="false" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="SDT" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Luong" Type="int" Nullable="false" />
@@ -88,9 +84,9 @@
     <Key>
       <PropertyRef Name="MaPhong" />
     </Key>
-    <Property Name="MaPhong" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaPhong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenPhong" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="MaLoaiPhong" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaLoaiPhong" Type="int" />
     <Property Name="TrangThai" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="FK__DichVu__MaLDV__4222D4EF">
@@ -105,8 +101,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HoaDonDat__MaPho__4CA06362">
-    <End Role="Phong" Type="Self.Phong" Multiplicity="1" />
+  <Association Name="FK__HoaDonDat__MaPho__4AB81AF0">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
     <End Role="HoaDonDatPhong" Type="Self.HoaDonDatPhong" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Phong">
@@ -117,7 +113,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HoaDonDatP__MaKH__4BAC3F29">
+  <Association Name="FK__HoaDonDatP__MaKH__49C3F6B7">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
     <End Role="HoaDonDatPhong" Type="Self.HoaDonDatPhong" Multiplicity="*" />
     <ReferentialConstraint>
@@ -126,18 +122,6 @@
       </Principal>
       <Dependent Role="HoaDonDatPhong">
         <PropertyRef Name="MaKH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__HoaDonDatP__MaNV__4AB81AF0">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
-    <End Role="HoaDonDatPhong" Type="Self.HoaDonDatPhong" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NhanVien">
-        <PropertyRef Name="MaNV" />
-      </Principal>
-      <Dependent Role="HoaDonDatPhong">
-        <PropertyRef Name="MaNV" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -153,8 +137,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HoaDonDich__MaDV__47DBAE45">
-    <End Role="DichVu" Type="Self.DichVu" Multiplicity="1" />
+  <Association Name="FK__HoaDonDich__MaDV__46E78A0C">
+    <End Role="DichVu" Type="Self.DichVu" Multiplicity="0..1" />
     <End Role="HoaDonDichVu" Type="Self.HoaDonDichVu" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="DichVu">
@@ -165,7 +149,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HoaDonDich__MaKH__46E78A0C">
+  <Association Name="FK__HoaDonDich__MaKH__45F365D3">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
     <End Role="HoaDonDichVu" Type="Self.HoaDonDichVu" Multiplicity="*" />
     <ReferentialConstraint>
@@ -177,20 +161,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HoaDonDich__MaNV__45F365D3">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
-    <End Role="HoaDonDichVu" Type="Self.HoaDonDichVu" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NhanVien">
-        <PropertyRef Name="MaNV" />
-      </Principal>
-      <Dependent Role="HoaDonDichVu">
-        <PropertyRef Name="MaNV" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Phong__MaLoaiPho__3D5E1FD2">
-    <End Role="LoaiPhong" Type="Self.LoaiPhong" Multiplicity="1" />
+    <End Role="LoaiPhong" Type="Self.LoaiPhong" Multiplicity="0..1" />
     <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="LoaiPhong">
@@ -202,16 +174,20 @@
     </ReferentialConstraint>
   </Association>
   <Function Name="KhachHang_TimKiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="MaKH" Type="varchar" Mode="In" />
     <Parameter Name="HoTenKH" Type="nvarchar" Mode="In" />
     <Parameter Name="GioiTinh" Type="nvarchar" Mode="In" />
-    <Parameter Name="CCCD" Type="varchar" Mode="In" />
-    <Parameter Name="SDT" Type="varchar" Mode="In" />
   </Function>
   <Function Name="NhanVien_TimKiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="MaNV" Type="varchar" Mode="In" />
     <Parameter Name="HoTen" Type="nvarchar" Mode="In" />
     <Parameter Name="GioiTinh" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ThongKe_Dichvu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NgayDau" Type="date" Mode="In" />
+    <Parameter Name="NgayCuoi" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ThongKe_HoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NgayDau" Type="date" Mode="In" />
+    <Parameter Name="NgayCuoi" Type="date" Mode="In" />
   </Function>
   <EntityContainer Name="Project_63132204ModelStoreContainer">
     <EntitySet Name="DichVu" EntityType="Self.DichVu" Schema="dbo" store:Type="Tables" />
@@ -226,32 +202,24 @@
       <End Role="LoaiDichVu" EntitySet="LoaiDichVu" />
       <End Role="DichVu" EntitySet="DichVu" />
     </AssociationSet>
-    <AssociationSet Name="FK__HoaDonDat__MaPho__4CA06362" Association="Self.FK__HoaDonDat__MaPho__4CA06362">
+    <AssociationSet Name="FK__HoaDonDat__MaPho__4AB81AF0" Association="Self.FK__HoaDonDat__MaPho__4AB81AF0">
       <End Role="Phong" EntitySet="Phong" />
       <End Role="HoaDonDatPhong" EntitySet="HoaDonDatPhong" />
     </AssociationSet>
-    <AssociationSet Name="FK__HoaDonDatP__MaKH__4BAC3F29" Association="Self.FK__HoaDonDatP__MaKH__4BAC3F29">
+    <AssociationSet Name="FK__HoaDonDatP__MaKH__49C3F6B7" Association="Self.FK__HoaDonDatP__MaKH__49C3F6B7">
       <End Role="KhachHang" EntitySet="KhachHang" />
-      <End Role="HoaDonDatPhong" EntitySet="HoaDonDatPhong" />
-    </AssociationSet>
-    <AssociationSet Name="FK__HoaDonDatP__MaNV__4AB81AF0" Association="Self.FK__HoaDonDatP__MaNV__4AB81AF0">
-      <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HoaDonDatPhong" EntitySet="HoaDonDatPhong" />
     </AssociationSet>
     <AssociationSet Name="FK__HoaDonDic__MaPho__44FF419A" Association="Self.FK__HoaDonDic__MaPho__44FF419A">
       <End Role="Phong" EntitySet="Phong" />
       <End Role="HoaDonDichVu" EntitySet="HoaDonDichVu" />
     </AssociationSet>
-    <AssociationSet Name="FK__HoaDonDich__MaDV__47DBAE45" Association="Self.FK__HoaDonDich__MaDV__47DBAE45">
+    <AssociationSet Name="FK__HoaDonDich__MaDV__46E78A0C" Association="Self.FK__HoaDonDich__MaDV__46E78A0C">
       <End Role="DichVu" EntitySet="DichVu" />
       <End Role="HoaDonDichVu" EntitySet="HoaDonDichVu" />
     </AssociationSet>
-    <AssociationSet Name="FK__HoaDonDich__MaKH__46E78A0C" Association="Self.FK__HoaDonDich__MaKH__46E78A0C">
+    <AssociationSet Name="FK__HoaDonDich__MaKH__45F365D3" Association="Self.FK__HoaDonDich__MaKH__45F365D3">
       <End Role="KhachHang" EntitySet="KhachHang" />
-      <End Role="HoaDonDichVu" EntitySet="HoaDonDichVu" />
-    </AssociationSet>
-    <AssociationSet Name="FK__HoaDonDich__MaNV__45F365D3" Association="Self.FK__HoaDonDich__MaNV__45F365D3">
-      <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HoaDonDichVu" EntitySet="HoaDonDichVu" />
     </AssociationSet>
     <AssociationSet Name="FK__Phong__MaLoaiPho__3D5E1FD2" Association="Self.FK__Phong__MaLoaiPho__3D5E1FD2">
